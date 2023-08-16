@@ -1,0 +1,60 @@
+from marshmallow import Schema, fields
+
+class UsuarioSchema(Schema):
+    cod_usuario = fields.Integer(dump_only=True)
+    nome_usuario = fields.String()
+    uf = fields.String()
+    cidade = fields.String()
+    logradouro = fields.String()
+    data_atualizado = fields.DateTime(dump_only=True)
+    bitlogado = fields.Boolean()
+    bitoff = fields.Boolean()
+    bitativo = fields.Boolean()
+    data_ultimo_login = fields.DateTime(dump_only=True)
+
+class ProdutoSchema(Schema):
+    cod_produto = fields.Integer(dump_only=True)
+    nome_produto = fields.String()
+    url_imagem = fields.String()
+    marca = fields.String()
+    categoria = fields.String()
+    departamento = fields.String()
+    subcategoria = fields.String()
+    cor = fields.String()
+    fator_caixa = fields.Float()
+    grupo = fields.String()
+    atributos = fields.String()
+    url_pagina = fields.String()
+    cod_google = fields.Integer()
+    data_atualizado = fields.DateTime(dump_only=True)
+
+class GoogleShoppingSchema(Schema):
+    cod_google = fields.Integer(dump_only=True)
+    ean = fields.String()
+    nome_produto = fields.String()
+    url_gogle = fields.String()
+    url_anuncio = fields.String()
+    preco = fields.Float()
+    seller = fields.String()
+    preco_infos = fields.String()
+    data_atualizado = fields.DateTime(dump_only=True)
+    cod_produto = fields.Integer()
+
+class PedidoSchema(Schema):
+    cod_pedido = fields.Integer(dump_only=True)
+    cod_usuario = fields.Integer()
+    cod_produto = fields.Integer()
+    quantidade = fields.Float()
+    preco = fields.Float()
+    preco_total = fields.Float()
+
+class TreinoProdutoSchema(Schema):
+    cod_treino = fields.Integer(dump_only=True)
+    cod_usuario = fields.Float()
+    cod_produto = fields.Integer()
+    cod_google = fields.Integer()
+    rating_ALS = fields.Float()
+    lift = fields.Float()
+    confianca = fields.Float()
+    suport = fields.Float()
+    rating = fields.Float()
